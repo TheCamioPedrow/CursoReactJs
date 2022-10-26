@@ -1,0 +1,30 @@
+*{
+    font-family: sans-serif;
+}
+
+h1{
+    background-color: black;
+    border-radius: 15rem;
+    font-size: 2vw;
+    margin: 0%;
+    padding: 0.5vw;
+}
+
+
+ul {
+    display: flex;
+    justify-content: start;
+    background-color: #FF7F00;
+    list-style-type: none;
+}
+
+li {
+    align-self: center;
+    margin: 0;
+    padding: 1vw;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
