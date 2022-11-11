@@ -1,22 +1,27 @@
 *{
+    margin: 0 auto;
+    padding: 0;
     font-family: sans-serif;
 }
 
-h1{
+.pepe h1{
     background-color: black;
+    color: white;
     border-radius: 15rem;
     font-size: 2vw;
     margin: 0%;
     padding: 0.5vw;
 }
 
-
-ul {
+.pepe{
+    margin: 0;
     display: flex;
     justify-content: start;
-    background-color: #FF7F00;
+    background-color: rgb(237, 110, 44);
     list-style-type: none;
+    padding: 10px;
 }
+
 
 li {
     align-self: center;
@@ -24,7 +29,14 @@ li {
     padding: 1vw;
 }
 
-a {
-    text-decoration: none;
-    color: white;
+li a{
+    text-decoration: inherit;
+    color: inherit;
+    font-size: 1.25vw;
+    font-weight: bold;
+}
+
+li a:hover {
+    color: black;
+    background-color: white;
 }

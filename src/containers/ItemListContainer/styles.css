@@ -1,0 +1,8 @@
+.item-list-container {
+    background-color: rgb(53, 64, 147);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
