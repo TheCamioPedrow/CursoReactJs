@@ -1,40 +1,24 @@
-import React, {useEffect, useState} from 'react';
-import './styles.css';
-import ItemList from '../../components/ItemList';
-import { useParams } from 'react-router-dom';
+import React from "react";
+import "./styles.css";
+import ItemList from "../../components/ItemList";
+import { useParams } from "react-router-dom";
+import useFirebase from "../../hooks/useFirebase";
 
-export default function ItemListContainer ({greeting}) {
+export default function ItemListContainer() {
 
-    const [products, setProducts] = useState([])
-
-    const {categoryId} = useParams()
-
-    console.log(categoryId);
-
-    useEffect(()=> {
-        ( async ()=> {
-            try {
-                console.log(categoryId);
-                let response;
-                if (categoryId) {
-                    response = await fetch(`https://rickandmortyapi.com/api/character/?species=${categoryId}`);
-                } else {
-                    response = await fetch(`https://rickandmortyapi.com/api/character`);
-                }   
-                const data = await response.json();
-                console.log(data);
-                if (data.results) setProducts(data.results)
-            } catch (error) {
-                console.log(error);
-            }
-        })()
-    }, [categoryId])
-
-    console.log(products);
+    const { categoryId } = useParams();
+    const [data, error, loading] = useFirebase(categoryId)
 
     return (
         <>
-            {products.length ? <ItemList products={products}/> : <h1>Cargando... Disculpe las molestias :S</h1> }
+            {(data.length && !loading &&!error)
+            ? <ItemList products={data} />
+            : error
+            ? <h1>{error}</h1>
+            : loading
+                ? <h1>Hola estoy Cargando</h1>
+                : null
+            }
         </>
-    )
+    );
 }

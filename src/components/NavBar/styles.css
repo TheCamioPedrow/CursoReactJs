@@ -4,7 +4,7 @@
     font-family: sans-serif;
 }
 
-.pepe h1{
+.ul-container h1{
     background-color: black;
     color: white;
     border-radius: 15rem;
@@ -13,7 +13,7 @@
     padding: 0.5vw;
 }
 
-.pepe{
+.ul-container{
     margin: 0;
     display: flex;
     justify-content: start;
@@ -38,5 +38,41 @@ li a{
 
 li a:hover {
     color: black;
+    background-color: white;
+}
+
+.ul-container-dark{
+    margin: 0;
+    display: flex;
+    justify-content: start;
+    background-color: rgb(112, 5, 5);
+    list-style-type: none;
+    padding: 10px;
+}
+
+.ul-container-dark h1{
+    background-color: black;
+    color: white;
+    border-radius: 15rem;
+    font-size: 2vw;
+    margin: 0%;
+    padding: 0.5vw;
+}
+
+.select-container{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    color: white;
+    margin-left: 0px;
+}
+
+.theme-select-dark{
+    display: flex;
+    background-color: grey;
+}
+
+.theme-select{
+    display: flex;
     background-color: white;
 }
