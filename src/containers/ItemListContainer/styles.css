@@ -6,3 +6,12 @@
     align-items: center;
     justify-content: center;
 }
+
+.item-list-container-dark {
+    background-color: rgb(13, 15, 34);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

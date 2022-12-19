@@ -16,7 +16,6 @@
 .ul-container{
     margin: 0;
     display: flex;
-    justify-content: start;
     background-color: rgb(237, 110, 44);
     list-style-type: none;
     padding: 10px;
@@ -44,7 +43,6 @@ li a:hover {
 .ul-container-dark{
     margin: 0;
     display: flex;
-    justify-content: start;
     background-color: rgb(112, 5, 5);
     list-style-type: none;
     padding: 10px;

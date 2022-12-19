@@ -33,7 +33,7 @@ const ItemDetail = ({ character }) => {
             </div>
             <div className="compra">
                 {quantityItemDetail ? 
-                <button onClick={handleNavigate}>Go cart</button>
+                <button className="btn btn-success" onClick={handleNavigate}>Al Carrito</button>
             : 
                 <ItemCount onAdd={confirmPurchase} initial={1} stock={character.quantity} />
             }
