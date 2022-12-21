@@ -1,0 +1,107 @@
+.container-form{
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+
+.container-form h2{
+    background-color: rgb(196, 219, 242);
+    margin: 30px;
+    padding: 30px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    border-radius: 8px;
+    border: solid 2px black;
+}
+
+#formularios{
+    background-color: rgb(196, 219, 242);
+    border: solid 2px black;
+    border-radius: 8px;
+    margin: 25px;
+    padding: 25px;
+}
+
+#formularios label{
+    font-size: 25px;
+}
+
+
+#botonCompra {
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: solid 2px black;
+}
+
+
+
+
+.container-form-dark{
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form{
+    background-color: rgb(112, 5, 5);
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+
+.container-form-dark h2 {
+    background-color: rgb(112, 5, 5);
+    margin: 30px;
+    padding: 30px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    border-radius: 8px;
+    border: solid 2px black;
+}
+
+#formularios-dark{
+    background-color: rgb(112, 5, 5);
+    border: solid 2px black;
+    border-radius: 8px;
+    margin: 25px;
+    padding: 25px;
+}
+
+#formularios label{
+    font-size: 25px;
+}
+
+
+#botonCompra {
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: solid 2px black;
+}

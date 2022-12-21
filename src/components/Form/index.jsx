@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import './styles.css';
+import { Theme } from "../../contexts/Theme";
 import { useForm } from 'react-hook-form';
 import generateOrderObject from '../../services/generateOrderObject';
 import { doc, getDoc, updateDoc, collection, addDoc } from 'firebase/firestore';
@@ -6,6 +8,9 @@ import { db } from '../../firebase/config';
 import { Shop } from '../../contexts/Shop';
 
 export const FormBasic = () => {
+
+  const {themeColor} = useContext(Theme)
+
     const { register, handleSubmit, formState: { errors }, } = useForm()
 
     const { products , calculateTotal } = useContext(Shop);
@@ -15,7 +20,9 @@ export const FormBasic = () => {
         //Mostar un formulario de compra donde el usuario ingrese sus datos(eliminar esto hardcodeado)
         (async () => {
           const generatedOrder = generateOrderObject(
-            data,
+            data.nombre, 
+            data.email, 
+            data.telefono,
             products,
             calculateTotal()
           );
@@ -25,10 +32,10 @@ export const FormBasic = () => {
           //Chequear el stock de los productos del carrito
     
           for (const productInCart of products) {
-            const docRef = doc(db, 'character', productInCart.id);
+            const docRef = doc(db, 'products', productInCart.id);
             const docSnap = await getDoc(docRef);
             console.log(docSnap);
-            const productInFirebase = { ...docSnap.data(), id: doc.id };
+            const productInFirebase = { ...docSnap.data(), id: docSnap.id };
             if (productInCart.quantity > productInFirebase.quantity)
               productOutOfStock.push(productInCart);
           }
@@ -40,7 +47,7 @@ export const FormBasic = () => {
             console.log(products);
     
             for (const productInCart of products) {
-              const productRef = doc(db, 'character', productInCart.id);
+              const productRef = doc(db, 'products', productInCart.id);
     
               const docSnap = await getDoc(productRef);
               const productInFirebase = { ...docSnap.data(), id: doc.id };
@@ -69,26 +76,25 @@ export const FormBasic = () => {
     
 
     return (
-    <div className="container-form">
+    <div className={themeColor === "light" ? "container-form": "container-form-dark"}>
         <h2>Formulario de Compra</h2>
-
         <form onSubmit={handleSubmit(confirmPurchase)}>
-            <div className="form-control">
+            <div className="form-control" id='formularios'>
                 <label>Nombre: </label>
                 <input type="text" {...register('nombre', { required: true })} />
                 {errors.name && <small>complete field</small>}
             </div>
-            <div className="form-control">
+            <div className="form-control" id='formularios'>
                 <label>Telefono: </label>
                 <input type="number" {...register('telefono', { required: true })} />
                 {errors.phone && <small>complete field</small>}
             </div>
-            <div className="form-control">
+            <div className="form-control" id='formularios'>
                 <label>Email:</label>
                 <input type="email" {...register('email', { pattern: true })} />
                 {errors.email && <small>invalid email</small>}
             </div>
-            <button type="submit" className="btn">
+            <button type="submit" id='botonCompra' className="btn btn-success">
                 Confirmar Compra
             </button>
         </form>

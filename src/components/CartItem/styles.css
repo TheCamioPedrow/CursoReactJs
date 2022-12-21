@@ -1,3 +1,37 @@
 .carrito {
+    margin: 0px 20px 20px 20px;
+    background-color: rgb(196, 219, 242);
+    border: solid 3px black;
+    border-radius: 10px;
+    font-size: 2vw;
+}
+
+.carrito h1{
+    color: black;
+}
+
+.carrito p {
+    color: black;
+}
+
+.carrito img{
+    border: solid 3px black;
+    border-radius: 10px;
+}
+
+
+.carrito-dark {
+    margin: 0px 20px 20px 20px;
     background-color: rgb(40, 40, 40);
+    border: solid 3px black;
+    border-radius: 10px;
+    font-size: 2vw;
+}
+
+.carrito-dark h1{
+    color: white;
+}
+
+.carrito-dark p {
+    color: white;
 }

@@ -1,18 +1,21 @@
 import React, { useContext } from 'react'
 import { Shop } from '../../contexts/Shop'
 import TrashCanIcon from '../TrashCanIcon'
+import { Theme } from "../../contexts/Theme";
 import './styles.css';
 
 const CartItem = ({item}) => {
 
-const {removeProduct} = useContext(Shop);
+    const {themeColor} = useContext(Theme)
 
-const handleRemove = () => {
-    removeProduct(item.id)
-}
+    const {removeProduct} = useContext(Shop);
+
+    const handleRemove = () => {
+        removeProduct(item.id)
+    }
 
 return (
-    <div className='carrito' style={{
+    <div className={themeColor === "light" ? "carrito" : "carrito-dark"} style={{
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'left',
