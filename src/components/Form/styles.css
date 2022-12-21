@@ -61,18 +61,10 @@ form{
     flex-direction: column;
 }
 
-.form{
-    background-color: rgb(112, 5, 5);
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-}
-
 
 .container-form-dark h2 {
-    background-color: rgb(112, 5, 5);
+    color: white;
+    background-color: rgb(40,40,40);
     margin: 30px;
     padding: 30px;
     text-align: center;
@@ -84,24 +76,15 @@ form{
 }
 
 #formularios-dark{
-    background-color: rgb(112, 5, 5);
+    background-color: rgb(40,40,40);;
     border: solid 2px black;
     border-radius: 8px;
     margin: 25px;
     padding: 25px;
 }
 
-#formularios label{
+#formularios-dark label{
+    color: white;
     font-size: 25px;
 }
 
-
-#botonCompra {
-    margin: 20px auto;
-    padding: 20px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    border: solid 2px black;
-}

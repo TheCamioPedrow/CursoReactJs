@@ -79,17 +79,17 @@ export const FormBasic = () => {
     <div className={themeColor === "light" ? "container-form": "container-form-dark"}>
         <h2>Formulario de Compra</h2>
         <form onSubmit={handleSubmit(confirmPurchase)}>
-            <div className="form-control" id='formularios'>
+            <div className="form-control" id={themeColor === "light" ? "formularios": "formularios-dark"}>
                 <label>Nombre: </label>
                 <input type="text" {...register('nombre', { required: true })} />
                 {errors.name && <small>complete field</small>}
             </div>
-            <div className="form-control" id='formularios'>
+            <div className="form-control" id={themeColor === "light" ? "formularios": "formularios-dark"}>
                 <label>Telefono: </label>
                 <input type="number" {...register('telefono', { required: true })} />
                 {errors.phone && <small>complete field</small>}
             </div>
-            <div className="form-control" id='formularios'>
+            <div className="form-control" id={themeColor === "light" ? "formularios": "formularios-dark"}>
                 <label>Email:</label>
                 <input type="email" {...register('email', { pattern: true })} />
                 {errors.email && <small>invalid email</small>}
